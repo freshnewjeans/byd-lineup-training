@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BYD Malaysia — Sales Consultant Lineup</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='%23fff' text-anchor='middle'%3EBYD%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fff; --ink:#1d1d1f; --muted:#6e6e73; --soft:#86868b;
+  --blue:#06c; --blue-hover:#0077ed; --line:#d2d2d7;
+  --tile-light:#f5f5f7; --tile-dark:#111;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; line-height:1.5; overflow-x:hidden;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+
+/* ===== top nav (apple-style bar) ===== */
+.topbar{
+  position:sticky; top:0; z-index:50; height:44px; display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.85); backdrop-filter:saturate(1.8) blur(20px); -webkit-backdrop-filter:saturate(1.8) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.topbar nav{display:flex; gap:28px; font-size:12px; color:rgba(0,0,0,.8)}
+.topbar nav a{padding:0 4px; letter-spacing:.02em}
+.topbar nav a:hover{color:var(--ink)}
+@media (max-width:600px){.topbar nav{gap:16px}}
+
+/* ===== scroll reveal ===== */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1; transform:none}
+.reveal[data-d="1"]{transition-delay:.05s}
+.reveal[data-d="2"]{transition-delay:.12s}
+.reveal[data-d="3"]{transition-delay:.2s}
+.reveal[data-d="4"]{transition-delay:.28s}
+
+/* ===== hero ===== */
+.hero{position:relative; text-align:center; padding:84px 20px 96px}
+.hero .eyebrow{font-size:17px; color:var(--muted); margin:0 0 6px; font-weight:400}
+.hero h1{font-size:clamp(48px,9vw,88px); line-height:1.04; letter-spacing:-.015em; font-weight:700; margin:0 0 14px}
+.hero .sub{font-size:clamp(18px,2.6vw,26px); color:var(--muted); margin:0 auto 20px; max-width:24em; line-height:1.4}
+.ctas{display:flex; justify-content:center; flex-wrap:wrap; gap:8px 26px; font-size:clamp(17px,2vw,21px)}
+.ctas a{color:var(--blue)}
+.ctas a:hover{color:var(--blue-hover); text-decoration:underline}
+.ctas a .chev{margin-left:2px}
+
+/* ===== model sections ===== */
+.model{position:relative; text-align:center; overflow:hidden; padding:96px 20px 0}
+.model.dark{color:#f5f5f7; background:var(--tile-dark)}
+.model.light{background:var(--tile-light)}
+.model .eyebrow{font-size:12px; font-weight:400; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); margin:0 0 12px}
+.model.dark .eyebrow{color:#a1a1a6}
+.model h2{font-size:clamp(34px,5vw,52px); letter-spacing:-.015em; font-weight:700; margin:0 0 10px}
+.model .tag{font-size:clamp(17px,2.4vw,21px); color:var(--muted); margin:0 auto 34px; max-width:26em}
+.model.dark .tag{color:#a1a1a6}
+
+/* FBI block */
+.fbi{display:grid; grid-template-columns:1fr; gap:14px; max-width:920px; margin:0 auto 34px; text-align:left}
+@media (min-width:720px){.fbi{grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(255,255,255,.6)}}
+.fbi .cell{background:rgba(255,255,255,.5); padding:20px 22px}
+.fbi .cell + .cell{border-top:1px solid var(--line)}
+@media (min-width:720px){.fbi .cell + .cell{border-top:none; border-left:1px solid var(--line)}}
+.model.dark .fbi{background:transparent; border-color:rgba(255,255,255,.18)}
+.model.dark .fbi .cell{background:rgba(255,255,255,.05)}
+.model.dark .fbi .cell + .cell{border-color:rgba(255,255,255,.18)}
+.fbi .lab{font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--soft); margin:0 0 8px}
+.fbi .lab b{color:var(--blue)}
+.fbi p{margin:0; font-size:15px; line-height:1.55}
+.model .ctas{font-size:17px; margin-bottom:0}
+.model .photo{margin:56px auto 0; width:100%}
+.model .photo img{width:100%; height:clamp(240px,42vw,540px); object-fit:cover; object-position:center; transition:transform 1.2s var(--ease)}
+.model:hover .photo img{transform:scale(1.02)}
+
+/* ===== compare ===== */
+.compare{max-width:1080px; margin:0 auto; padding:100px 20px}
+.compare .head{text-align:center; margin-bottom:52px}
+.compare .head h2{font-size:clamp(32px,5vw,48px); letter-spacing:-.015em; font-weight:700; margin:0 0 12px}
+.compare .head p{color:var(--muted); font-size:clamp(17px,2.4vw,21px); margin:0 auto; max-width:26em}
+.filters{display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-bottom:34px}
+.fbtn{padding:7px 16px; border-radius:980px; border:1px solid var(--line); background:#fff; color:var(--ink); font-size:13px; font-weight:500; transition:all .2s var(--ease)}
+.fbtn:hover{border-color:var(--soft)}
+.fbtn.on{background:var(--ink); color:#fff; border-color:var(--ink)}
+table{width:100%; border-collapse:collapse; table-layout:fixed; text-align:left}
+colgroup col:nth-child(1){width:18%}
+colgroup col:nth-child(2){width:16%}
+colgroup col:nth-child(3){width:30%}
+colgroup col:nth-child(4){width:36%}
+thead th{font-size:12px; font-weight:500; color:var(--soft); text-transform:uppercase; letter-spacing:.04em; padding:12px 14px; border-bottom:1px solid var(--line)}
+tbody td{font-size:15px; padding:16px 14px; border-bottom:1px solid var(--line); color:var(--ink); vertical-align:top}
+tbody td strong{font-weight:600}
+tbody td.muted{color:var(--muted)}
+tr.hide{display:none}
+tfoot td{border-bottom:none; padding-top:18px; font-size:13px; color:var(--soft)}
+tfoot a{color:var(--blue)}
+tfoot a:hover{text-decoration:underline}
+
+/* ===== footer ===== */
+footer{background:#f5f5f7; padding:34px 20px 48px; color:var(--soft); font-size:12px}
+footer .wrap{max-width:1080px; margin:0 auto}
+footer p{margin:0 0 6px}
+footer .credit{color:var(--ink); font-weight:600; margin-top:12px; font-size:13px}
+
+/* ===== toast ===== */
+.toast{position:fixed; left:50%; bottom:30px; transform:translate(-50%,150%); z-index:90; background:rgba(29,29,31,.92); color:#fff; padding:12px 20px; border-radius:980px; font-size:13px; font-weight:500; box-shadow:0 6px 24px rgba(0,0,0,.2); transition:transform .5s var(--ease)}
+.toast.show{transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav aria-label="Sections">
+    <a href="#models">Lineup</a>
+    <a href="#compare">Compare</a>
+  </nav>
+</header>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <p class="eyebrow reveal" data-d="1">EV Supreme · Sales Consultant Training</p>
+  <h1 class="reveal" data-d="2">BYD Malaysia.</h1>
+  <p class="sub reveal" data-d="3">Three models. One electric lineup — feature, benefit and impact at a glance for our sales consultants.</p>
+  <div class="ctas reveal" data-d="4">
+    <a href="#models">Explore the lineup <span class="chev">›</span></a>
+    <a href="#compare">Compare models <span class="chev">›</span></a>
+  </div>
+</section>
+
+<!-- ===== models ===== -->
+<section id="models">
+
+  <article class="model light" id="atto3">
+    <p class="eyebrow reveal">C-SUV · ATTO 3</p>
+    <h2 class="reveal" data-d="1">The easy switch.</h2>
+    <p class="tag reveal" data-d="2">A roomy, approachable compact electric SUV — for first-timers and families.</p>
+    <div class="fbi reveal" data-d="3">
+      <div class="cell"><p class="lab">Feature</p><p>LFP <b>Blade Battery</b> engineered for safety-first power storage, plus a playful, kinetic cabin.</p></div>
+      <div class="cell"><p class="lab">Benefit</p><p>An extremely safe, long-lasting battery that reassures new EV owners, in a cabin that feels young and fun.</p></div>
+      <div class="cell"><p class="lab">Impact</p><p>First-time EV buyers switch from petrol with confidence instead of fear.</p></div>
+    </div>
+    <div class="ctas reveal" data-d="4"><a href="#atto3">Copy pitch <span class="chev">›</span></a></div>
+    <div class="photo reveal"><img src="assets/atto3.jpg" alt="BYD ATTO 3"></div>
+  </article>
+
+  <article class="model dark" id="seal">
+    <p class="eyebrow reveal">D-Sedan · Seal</p>
+    <h2 class="reveal" data-d="1">Pro further.</h2>
+    <p class="tag reveal" data-d="2">The performance flagship — sleek, low and quick for buyers who want their EV exciting.</p>
+    <div class="fbi reveal" data-d="3">
+      <div class="cell"><p class="lab">Feature</p><p><b>Cell-to-Body</b> structure and iTAC torque control for stiff, sporty dynamics.</p></div>
+      <div class="cell"><p class="lab">Benefit</p><p>A stiffer body and sharper handling deliver a genuinely exciting, planted drive.</p></div>
+      <div class="cell"><p class="lab">Impact</p><p>Performance-minded buyers start to see BYD as a real rival to sporty premium sedans.</p></div>
+    </div>
+    <div class="ctas reveal" data-d="4"><a href="#seal">Copy pitch <span class="chev">›</span></a></div>
+    <div class="photo reveal"><img src="assets/seal.jpg" alt="BYD Seal"></div>
+  </article>
+
+  <article class="model light" id="m6">
+    <p class="eyebrow reveal">MPV · M6</p>
+    <h2 class="reveal" data-d="1">Space for everyone.</h2>
+    <p class="tag reveal" data-d="2">A proper 7-seater that runs electric — all the room of an MPV with an EV running cost.</p>
+    <div class="fbi reveal" data-d="3">
+      <div class="cell"><p class="lab">Feature</p><p>A true <b>7-seat electric</b> layout, built around whole-family practicality.</p></div>
+      <div class="cell"><p class="lab">Benefit</p><p>Space for the entire family with EV running costs — one vehicle covers it all.</p></div>
+      <div class="cell"><p class="lab">Impact</p><p>Family buyers get a single practical car that also saves meaningfully on fuel.</p></div>
+    </div>
+    <div class="ctas reveal" data-d="4"><a href="#m6">Copy pitch <span class="chev">›</span></a></div>
+    <div class="photo reveal"><img src="assets/m6.jpg" alt="BYD M6"></div>
+  </article>
+
+</section>
+
+<!-- ===== compare ===== -->
+<section id="compare" class="compare">
+  <div class="head">
+    <h2 class="reveal">Side by side.</h2>
+    <p class="reveal" data-d="1">Filter by the conversation — which segment is this customer actually shopping?</p>
+  </div>
+  <div class="filters reveal" data-d="2" id="filters">
+    <button class="fbtn on" data-f="all">All</button>
+    <button class="fbtn" data-f="SUV">SUV</button>
+    <button class="fbtn" data-f="Sedan">Sedan</button>
+    <button class="fbtn" data-f="MPV">MPV</button>
+  </div>
+  <div class="reveal" data-d="3">
+  <table>
+    <colgroup><col><col><col><col></colgroup>
+    <thead><tr><th>Model</th><th>Segment</th><th>Best fit</th><th>Opening line</th></tr></thead>
+    <tbody>
+      <tr data-seg="SUV"><td><strong>ATTO 3</strong></td><td class="muted">SUV</td><td>First-EV &amp; family</td><td>Easy switch — roomy, fun, value</td></tr>
+      <tr data-seg="Sedan"><td><strong>Seal</strong></td><td class="muted">Sedan</td><td>Style &amp; performance</td><td>Presence and pace</td></tr>
+      <tr data-seg="MPV"><td><strong>M6</strong></td><td class="muted">MPV</td><td>Families &amp; space</td><td>7 seats, EV running cost</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Segment and positioning reflect the current Malaysian lineup (ATTO&nbsp;3, Seal, M6). Hard spec figures should be confirmed against the latest MY price list before quoting on the floor.</td></tr></tfoot>
+  </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Reference aid for sales-consultant showroom training.</p>
+    <p class="credit">Designed &amp; Created by Kevin Lim Fung Yen — EV Supreme In-House Trainer</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---- Apple-style scroll reveal ---- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+},{threshold:.15, rootMargin:"0px 0px -10% 0px"});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* ---- compare filter ---- */
+const tbody = document.querySelector("tbody");
+document.getElementById("filters").addEventListener("click",(e)=>{
+  const b=e.target.closest(".fbtn"); if(!b) return;
+  document.querySelectorAll(".fbtn").forEach(x=>x.classList.toggle("on",x===b));
+  tbody.querySelectorAll("tr").forEach(r=>{
+    r.classList.toggle("hide", !(b.dataset.f==="all" || r.dataset.seg===b.dataset.f));
+  });
+});
+
+/* ---- copy pitch toast ---- */
+const toast=document.getElementById("toast"); let tt;
+const PITCHES={
+  atto3:"Looking for your first EV? The ATTO 3 is the easy switch — a roomy compact SUV with a fun, quirky interior that feels familiar, not intimidating.",
+  seal:"Want presence and pace? The Seal is our performance sedan — low, sleek and quick, for buyers who want their EV to feel exciting.",
+  m6:"Need the space? The M6 is a proper 7-seater that runs electric — all the room of an MPV with the running cost of an EV."
+};
+function showToast(t){ toast.textContent=t; toast.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove("show"),2000); }
+document.querySelectorAll('.model a[href^="#"]').forEach(a=>{
+  const id=a.getAttribute("href").slice(1);
+  a.addEventListener("click",(e)=>{
+    if(PITCHES[id]){
+      e.preventDefault();
+      const ta=document.createElement("textarea");
+      ta.value=PITCHES[id]; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); showToast("Pitch copied — paste it in your message."); }catch(_){ showToast("Copy the pitch text from the card."); }
+      ta.remove();
+    }
+  });
+});
+</script>
+</body>
+</html>
