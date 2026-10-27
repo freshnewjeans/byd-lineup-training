@@ -1,6 +1,6 @@
 # BYD Malaysia — Sales Consultant Lineup
 
-An apple.com-style training reference for BYD Malaysia sales consultants covering the current lineup: **ATTO 3, Seal, M6**.
+An apple.com-style training reference for BYD Malaysia sales consultants covering the current lineup: **ATTO 2, ATTO 3, Seal, Seal 6, Sealion 7, M6**.
 
 Each model includes a Feature → Benefit → Impact (FBI) breakdown, a copy-ready pitch, and a side-by-side comparison table.
 
